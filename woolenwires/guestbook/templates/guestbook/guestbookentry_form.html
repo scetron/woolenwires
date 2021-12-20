@@ -1,0 +1,19 @@
+{% include 'guestbook/header.html' %}
+<body>
+    <div class="bg">
+      <div class="section" style="background-color: rgba(46, 46, 46, 0.863);">
+           
+              <form method="post">{% csrf_token %} 
+                  {{ form.as_p }}
+                  <div align="center">
+                     <button type="submit" align="center" class="button-56" role="button">Sign Guestbook</button> 
+                  </div>
+              </form>
+          
+
+            
+      </div>
+    </div>
+    
+    </body> 
+</html>

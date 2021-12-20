@@ -1,0 +1,34 @@
+
+{% include 'guestbook/header.html' %}
+<body>
+<div class="bg">
+  <div class="section" align="center">
+    <h1>Welcome to Jacky and Stephen's Wedding Guestbook!</h1>
+    <p>Please sign the guestbook to leave a memory for us. There will be two spaces for messages: 
+      a knit message that will be knitted into a wedding blanket in wool and a second space to leave
+      a longer message. </p>
+    <p>These messages will rendered into our wedding quilt thorugh our hacked knitting machine that 
+     takes input through the computer to create new stitches. 
+    </p>
+    <p>The 'knitting' below are the messages we have received from others who have signed the guestbook
+      so far. The stitches are a likeness of the final quilt.</p>
+    <div align="center">
+      <a href="{% url 'add_entry' %}"> <button align="center" class="button-56" role="button">Sign Guestbook</button></a>
+    </div>
+  </div>
+  <div class="section">
+
+          {% for note in object_list %}
+          <div class="knit">
+            {{ note.knit_message }}
+          </div>
+          {% empty %}
+            no notes yet
+          {% endfor %}
+
+          
+  </div>
+</div>
+
+</body>
+</html>
